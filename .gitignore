@@ -51,3 +51,4 @@ Temporary Items
 *.log
 ./db
 **/data
+**/bower_components
