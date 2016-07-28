@@ -1,0 +1,4 @@
+{
+	"proxy": "http://adc-proxy.oracle.com:80",
+	"https-proxy": "http://adc-proxy.oracle.com:80"
+}

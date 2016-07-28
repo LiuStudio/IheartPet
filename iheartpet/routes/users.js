@@ -8,6 +8,13 @@ router.get('/', function(req, res, next) {
    // res.sendfile('user.html')
 });
 
+/*
+// in course era can also use
+router.route('/').get(function(req, res,next){
+
+})
+*/
+
 /* GET users listing. */
 router.get('/:userid', function(req, res, next) {
   res.send('respond with a resource' + req.params.userid);
