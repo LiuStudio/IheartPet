@@ -5,10 +5,11 @@ var mongoose = require('mongoose');
 
 var authenticationController = require('../public/app/controllers/authentication-controller')
 
+/*
 mongoose.connect('mongodb://localhost:27017/iheartpet');
-
-
-
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+*/
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

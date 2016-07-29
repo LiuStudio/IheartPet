@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 
 var app = express();
 
@@ -39,6 +39,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
+  console.log("----------DEVELOPMENT ERROR CATCHED----------")
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
@@ -51,6 +52,7 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
+  console.log("----------PRODUCTION ERROR CATCHED----------")
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
