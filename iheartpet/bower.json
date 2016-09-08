@@ -1,0 +1,21 @@
+{
+  "name": "iheartpet",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Bin Liu <bin.w.liu@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/LiuStudio/IheartPet",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0"
+  }
+}

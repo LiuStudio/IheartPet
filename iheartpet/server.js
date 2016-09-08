@@ -4,28 +4,31 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
 var mongoose = require('mongoose');
+var passport = require('passport');
+require('./app_api/models/db');
+require('./app_api/config/passport');
+
+var routesApi = require('./app_api/rountes/index');
 
 var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(cookieParser('12345-67890-09876-54321'));
 
-app.use('/', routes);
-app.use('/users', users);
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app_client')));
+
+// use API routes when path starts with /api
+app.use('/api', routesApi);
+//Otherwise render the index.html page for angular SPA
+app.use(function(req, res, next){
+  res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

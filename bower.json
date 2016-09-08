@@ -1,0 +1,17 @@
+{
+  "name": "iheartpet",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Bin Liu <bin.w.liu@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/LiuStudio/IheartPet",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
